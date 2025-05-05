@@ -3,3 +3,5 @@
 ### ExtraUpgradesPlus
 tbd
 
+### MikuHatsuneSounds
+tbd
