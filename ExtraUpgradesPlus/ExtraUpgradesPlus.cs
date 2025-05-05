@@ -6,6 +6,7 @@ using UnityEngine;
 namespace ExtraUpgradesPlus;
 
 [BepInPlugin("alexp777.ExtraUpgradesPlus", "ExtraUpgradesPlus", "1.0")]
+[BepInDependency(REPOLib.MyPluginInfo.PLUGIN_GUID, BepInDependency.DependencyFlags.HardDependency)]
 public class ExtraUpgradesPlus : BaseUnityPlugin
 {
     internal static ExtraUpgradesPlus Instance { get; private set; } = null!;
