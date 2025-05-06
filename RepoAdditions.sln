@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraUpgradesPlus", "ExtraUpgradesPlus\ExtraUpgradesPlus.csproj", "{B8411EC7-8ADB-4D6B-80DE-348FC8A2ED3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterRechargeDrone", "BetterRechargeDrone\BetterRechargeDrone.csproj", "{387D3E9D-12D0-4552-A406-C79DB62C1F23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurableWeapons", "ConfigurableWeapons\ConfigurableWeapons.csproj", "{78A67FC2-EA32-422E-92BE-C94FB37C0356}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AModLib", "AModLib\AModLib.csproj", "{8589B722-B5DF-440C-9B3A-D0D4E53432BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,17 @@ Global
 		{B8411EC7-8ADB-4D6B-80DE-348FC8A2ED3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8411EC7-8ADB-4D6B-80DE-348FC8A2ED3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8411EC7-8ADB-4D6B-80DE-348FC8A2ED3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{387D3E9D-12D0-4552-A406-C79DB62C1F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{387D3E9D-12D0-4552-A406-C79DB62C1F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{387D3E9D-12D0-4552-A406-C79DB62C1F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{387D3E9D-12D0-4552-A406-C79DB62C1F23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78A67FC2-EA32-422E-92BE-C94FB37C0356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A67FC2-EA32-422E-92BE-C94FB37C0356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A67FC2-EA32-422E-92BE-C94FB37C0356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A67FC2-EA32-422E-92BE-C94FB37C0356}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8589B722-B5DF-440C-9B3A-D0D4E53432BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8589B722-B5DF-440C-9B3A-D0D4E53432BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8589B722-B5DF-440C-9B3A-D0D4E53432BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8589B722-B5DF-440C-9B3A-D0D4E53432BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
