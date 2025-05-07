@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace ConfigurableWeapons;
 
-[BepInPlugin("alexp777.ConfigurableWeapons", "ConfigurableWeapons", "0.1.0")]
+[BepInPlugin("com.github.alexporter7.ConfigurableWeapons", "ConfigurableWeapons", "0.1.0")]
 [BepInDependency(REPOLib.MyPluginInfo.PLUGIN_GUID, BepInDependency.DependencyFlags.HardDependency)]
 public class ConfigurableWeapons : BaseUnityPlugin {
     
