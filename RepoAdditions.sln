@@ -6,7 +6,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterRechargeDrone", "Bett
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurableWeapons", "ConfigurableWeapons\ConfigurableWeapons.csproj", "{78A67FC2-EA32-422E-92BE-C94FB37C0356}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AModLib", "AModLib\AModLib.csproj", "{8589B722-B5DF-440C-9B3A-D0D4E53432BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreWeapons", "MoreWeapons\MoreWeapons.csproj", "{5BBE6F47-B442-4F92-8DD6-534914B28B62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AModLib", "AModLib\AModLib.csproj", "{D2565B85-AB09-44CC-82E2-6308A651D5E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildRepoAdditions", "BuildRepoAdditions\BuildRepoAdditions.csproj", "{A8E7BA4A-5C01-4B31-B339-4B915B85B8A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +30,17 @@ Global
 		{78A67FC2-EA32-422E-92BE-C94FB37C0356}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78A67FC2-EA32-422E-92BE-C94FB37C0356}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78A67FC2-EA32-422E-92BE-C94FB37C0356}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8589B722-B5DF-440C-9B3A-D0D4E53432BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8589B722-B5DF-440C-9B3A-D0D4E53432BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8589B722-B5DF-440C-9B3A-D0D4E53432BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8589B722-B5DF-440C-9B3A-D0D4E53432BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BBE6F47-B442-4F92-8DD6-534914B28B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BBE6F47-B442-4F92-8DD6-534914B28B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BBE6F47-B442-4F92-8DD6-534914B28B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BBE6F47-B442-4F92-8DD6-534914B28B62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2565B85-AB09-44CC-82E2-6308A651D5E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2565B85-AB09-44CC-82E2-6308A651D5E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2565B85-AB09-44CC-82E2-6308A651D5E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2565B85-AB09-44CC-82E2-6308A651D5E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E7BA4A-5C01-4B31-B339-4B915B85B8A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E7BA4A-5C01-4B31-B339-4B915B85B8A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E7BA4A-5C01-4B31-B339-4B915B85B8A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E7BA4A-5C01-4B31-B339-4B915B85B8A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

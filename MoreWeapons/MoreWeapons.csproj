@@ -31,7 +31,15 @@
         <PackageReference Include="Zehs.REPOLib" Version="2.*" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="api\" />
+      <None Update="export\CHANGELOG.md">
+        <CopyToPluginOutputDirectory>PreserveNewest</CopyToPluginOutputDirectory>
+      </None>
+      <None Update="export\manifest.json">
+        <CopyToPluginOutputDirectory>PreserveNewest</CopyToPluginOutputDirectory>
+      </None>
+      <None Update="export\README.md">
+        <CopyToPluginOutputDirectory>PreserveNewest</CopyToPluginOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

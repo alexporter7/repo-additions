@@ -5,7 +5,7 @@
         <LangVersion>12</LangVersion>
         <Nullable>enable</Nullable>
         <Authors>alexp777</Authors>
-        <Version>1.0.0</Version>
+        <Version>0.1.0</Version>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
@@ -30,5 +30,8 @@
 
         <PackageReference Include="Zehs.REPOLib" Version="2.*" />
     </ItemGroup>
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="cp $(TargetPath) ~/.config/r2modmanPlus-local/REPO/profiles/mod-testing/BepInEx/plugins/Unknown-ConfigurableWeapons/$(TargetFileName)" />
+    </Target>
 
 </Project>
