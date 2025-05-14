@@ -31,15 +31,22 @@
         <PackageReference Include="Zehs.REPOLib" Version="2.*" />
     </ItemGroup>
     <ItemGroup>
-      <None Update="export\CHANGELOG.md">
+      <None Update="CHANGELOG.md">
         <CopyToPluginOutputDirectory>PreserveNewest</CopyToPluginOutputDirectory>
       </None>
-      <None Update="export\manifest.json">
+      <None Update="manifest.json">
         <CopyToPluginOutputDirectory>PreserveNewest</CopyToPluginOutputDirectory>
       </None>
-      <None Update="export\README.md">
+      <None Update="README.md">
         <CopyToPluginOutputDirectory>PreserveNewest</CopyToPluginOutputDirectory>
       </None>
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\AModLib\AModLib.csproj" />
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="cp $(TargetPath) ~/.config/r2modmanPlus-local/REPO/profiles/mod-testing/BepInEx/plugins/Unknown-MoreWeapons/$(TargetFileName)" />
+    </Target>
 
 </Project>

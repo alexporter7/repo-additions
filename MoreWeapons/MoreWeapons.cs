@@ -6,6 +6,7 @@ using UnityEngine;
 namespace MoreWeapons;
 
 [BepInPlugin("alexp777.MoreWeapons", "MoreWeapons", "1.0")]
+[BepInDependency("REPOLib", "2.1.0")]
 public class MoreWeapons : BaseUnityPlugin {
     
     internal static     MoreWeapons     Instance { get; private set; } = null!;
@@ -16,8 +17,8 @@ public class MoreWeapons : BaseUnityPlugin {
     private void Awake() {
         Instance = this;
         
-        PluginBundleLoader.LoadBundles();
-        //PluginBundleLoader.RegisterItems();
+        //PluginBundleLoader.LoadBundles();
+        PluginBundleLoader.LoadAssetBundle();
 
         // Prevent the plugin from being deleted
         this.gameObject.transform.parent = null;
