@@ -1,3 +1,4 @@
+using System;
 using AModLib.api.enums;
 using AModLib.api.state;
 using AModLib.init;
@@ -12,15 +13,17 @@ public class GunBase : MonoBehaviour {
     private ItemStateManager<ItemGunStates> ItemStateManager;
 
     private PhysGrabObject               physGrabObject;
-    private AmmoClip                     ammoClip;
+    private AmmoClip                     ammoClip { get; set; }
     private PhotonView                   photonView;
     private PhysGrabObjectImpactDetector impactDetector;
 
-    public float range;
-    public float recoilForce;
-    public float cameraShakeFactor;
-    public float shootCooldown;
-    public float holdDistance;
+    [Range(0f, 100f)] public float range             = 90f;
+    [Range(0f, 3f)]   public float recoilForce       = 1f;
+    [Range(0f, 3f)]   public float cameraShakeFactor = 1f;
+    [Range(0f, 30f)]  public float shootCooldown     = 1f;
+    [Range(0f, 20f)]  public float holdDistance      = 1f;
+
+    public float shootCooldownTimer = 1f;
 
     public GameObject bulletPrefab;
     public GameObject muzzleFlashPrefab;
@@ -38,7 +41,15 @@ public class GunBase : MonoBehaviour {
                 .RegisterState(ItemGunStates.Shooting, ItemGunItemStates.Shooting)
                 .RegisterState(ItemGunStates.NoAmmo, ItemGunItemStates.NoAmmo)
                 .RegisterState(ItemGunStates.Cooldown, ItemGunItemStates.Cooldown)
-                .RegisterState(ItemGunStates.Reloading, ItemGunItemStates.Reloading);
+                .RegisterState(ItemGunStates.Reloading, ItemGunItemStates.Reloading)
+                .RegisterComponentInstance(this);
+        
+        physGrabObject = GetComponent<PhysGrabObject>();
+        ammoClip       = GetComponent<AmmoClip>();
+        photonView     = GetComponent<PhotonView>();
+        impactDetector = GetComponent<PhysGrabObjectImpactDetector>();
+
+        shootCooldownTimer = shootCooldown;
     }
 
     private void Update() {
@@ -54,6 +65,18 @@ public class GunBase : MonoBehaviour {
     private void UpdateServer() {
         if (physGrabObject.grabbed) {
         }
+    }
+
+    public ItemStateManager<ItemGunStates> GetItemStateManager() {
+        return ItemStateManager;
+    }
+
+    public PhysGrabObject GetPhysGrabObject() {
+        return physGrabObject;
+    }
+
+    public AmmoClip GetAmmoClip() {
+        return ammoClip;
     }
 
 }

@@ -18,6 +18,11 @@ public class ItemStateManager<T> {
         return this;
     }
 
+    public ItemStateManager<T> RegisterComponentInstance(Component component) {
+        ComponentInstance = component;
+        return this;
+    }
+
     public bool CanEnterState(T state) {
         return ItemStates[state].IsValidStateTransition(state);
     }

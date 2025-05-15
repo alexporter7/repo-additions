@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using AModLib.weapon.gun;
 using UnityEngine;
 using static AModLib.api.delegates.ComponentDelegates;
 
@@ -7,36 +8,34 @@ namespace AModLib.api.state;
 
 public class ItemState<T>(T state) {
 
-    public delegate T GetNextState(Component component);
-    
-    public           T              State = state;
-    public           UpdateProperty OnStateEnter;
-    public           UpdateProperty OnStateExit;
-    public           UpdateProperty OnStateTick;
-    public           GetNextState   StateSupplier;
-    private readonly HashSet<T>     ValidNextStates = [];
+    public readonly  T                  State = state;
+    public           Action<Component>  OnStateEnter;
+    public           Action<Component>  OnStateExit;
+    public           Action<Component>  OnStateTick;
+    public           Func<Component, T> StateSupplier;
+    private readonly HashSet<T>         ValidNextStates = [];
 
     public ItemState<T> AddValidNextState(T state) {
         ValidNextStates.Add(state);
         return this;
     }
 
-    public ItemState<T> SetOnStateEnter(UpdateProperty action) {
+    public ItemState<T> SetOnStateEnter(Action<Component> action) {
         OnStateEnter = action;
         return this;
     }
 
-    public ItemState<T> SetOnStateExit(UpdateProperty action) {
+    public ItemState<T> SetOnStateExit(Action<Component> action) {
         OnStateExit = action;
         return this;
     }
 
-    public ItemState<T> SetOnStateTick(UpdateProperty action) {
+    public ItemState<T> SetOnStateTick(Action<Component> action) {
         OnStateTick = action;
         return this;
     }
 
-    public ItemState<T> SetStateSupplier(GetNextState action) {
+    public ItemState<T> SetStateSupplier(Func<Component, T> action) {
         StateSupplier = action;
         return this;
     }
