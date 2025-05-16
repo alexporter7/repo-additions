@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MoreWeapons;
 
-[BepInPlugin("alexp777.MoreWeapons", "MoreWeapons", "1.0")]
+[BepInPlugin("com.github.alexp777.MoreWeapons", "MoreWeapons", "1.0")]
 [BepInDependency("REPOLib", "2.1.0")]
 public class MoreWeapons : BaseUnityPlugin {
     

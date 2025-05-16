@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using REPOLib.Objects.Sdk;
-using Unity.VisualScripting;
 
 namespace MoreWeapons;
 
@@ -15,17 +13,7 @@ public class PluginBundleLoader {
     public static AssetBundle?             MoreWeaponsBundle;
 
     public static void LoadAssetBundle() {
-        // REPOLib.BundleLoader.LoadBundle("moreweapons", assetBundle => {
-        //     var item = assetBundle.LoadAsset<Item>("testitem");
-        //     REPOLib.Modules.Items.RegisterItem(item);
-        // });
         MoreWeaponsBundle = AssetBundle.LoadFromFile(GetAssetBundlePath("moreweapons"));
-        // foreach (var allAssetName in MoreWeaponsBundle.GetAllAssetNames()) {
-        //     MoreWeapons.Logger.LogInfo("Found asset: " + allAssetName + " | " + MoreWeaponsBundle.Contains(allAssetName));
-        // }
-
-        //Item test = GetItemFromBundle("assets/moreweapons/testitem.asset");
-        //MoreWeapons.Logger.LogInfo("Item: " + test.itemName);
         Items.Add("pm40", GetItemFromBundle("PM40Handgun"));
         RegisterItems();
     }

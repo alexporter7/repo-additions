@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 using BepInEx.Configuration;
-using MoreWeapons.preset;
+using MoreWeapons.Enums;
+using MoreWeapons.Preset;
 
 namespace MoreWeapons;
 

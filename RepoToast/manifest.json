@@ -1,0 +1,7 @@
+{
+  "name": "RepoToast",
+  "version_number": "0.1.0",
+  "website_url": "https://github.com/alexporter7/repo-additions",
+  "description": "Toast notifications for different events throughout the game.",
+  "dependencies": ["nickklmao-MenuLib-2.4.1"]
+}
