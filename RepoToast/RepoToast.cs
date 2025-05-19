@@ -1,6 +1,9 @@
-﻿using BepInEx;
+﻿using System.Reflection;
+using AModLib.AssetBundles;
+using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using RepoToast.Notification;
 using UnityEngine;
 
 namespace RepoToast;
@@ -9,10 +12,13 @@ namespace RepoToast;
 [BepInDependency("nickklmao.menulib", "2.4.1")]
 public class RepoToast : BaseUnityPlugin {
 
-    internal static     RepoToast       Instance { get; private set; } = null!;
-    internal new static ManualLogSource Logger   => Instance._logger;
-    private             ManualLogSource _logger  => base.Logger;
-    internal            Harmony?        Harmony  { get; set; }
+    internal static     RepoToast           Instance { get; private set; } = null!;
+    internal new static ManualLogSource     Logger   => Instance._logger;
+    private             ManualLogSource     _logger  => base.Logger;
+    internal            Harmony?            Harmony  { get; set; }
+    public              NotificationManager NotificationManager = new();
+    public              string              PluginBasePath      = Assembly.GetExecutingAssembly().Location;
+    public              AssetBundle         ToastAssetBundle; 
 
     private void Awake() {
         Instance = this;
@@ -21,7 +27,11 @@ public class RepoToast : BaseUnityPlugin {
         this.gameObject.transform.parent = null;
         this.gameObject.hideFlags        = HideFlags.HideAndDontSave;
         
-        PluginConfig.LoadConfigs(Config);
+        Logger.LogInfo("Loading Plugin Config");
+        PluginConfig.LoadConfigs(Instance.Config);
+        
+        Logger.LogInfo($"Loading RepoToast asset bundle using PluginBasePath [{PluginBasePath}]");
+        ToastAssetBundle = AssetBundle.LoadFromFile(BundleHelper.GetAssetBundlePath("repotoast", PluginBasePath));
 
         Patch();
 
@@ -38,7 +48,9 @@ public class RepoToast : BaseUnityPlugin {
     }
 
     private void Update() {
-        // Code that runs every frame goes here
+        if(SemiFunc.InputDown(InputKey.Crouch))
+            NotificationManager.RequestNotification(Notifications.OnExtractUnlocked);
+        NotificationManager.TickNotificationManager(Time.deltaTime);
     }
 
 }

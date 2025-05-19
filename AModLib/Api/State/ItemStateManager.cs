@@ -22,7 +22,7 @@ public class ItemStateManager<T> {
     }
 
     public bool CanEnterState(T state) {
-        return ItemStates[state].IsValidStateTransition(state);
+        return ItemStates[CurrentState].IsValidStateTransition(state);
     }
 
     public bool RequestState(T state) {

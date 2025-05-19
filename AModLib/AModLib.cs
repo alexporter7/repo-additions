@@ -7,6 +7,7 @@ namespace AModLib;
 
 [BepInPlugin("com.github.alexp777.AModLib", "AModLib", "1.0")]
 [BepInDependency(REPOLib.MyPluginInfo.PLUGIN_GUID, BepInDependency.DependencyFlags.HardDependency)]
+[BepInDependency("nickklmao.menulib", "2.4.1")]
 
 public class AModLib : BaseUnityPlugin {
     internal static     AModLib         Instance { get; private set; } = null!;
@@ -23,6 +24,7 @@ public class AModLib : BaseUnityPlugin {
         Patch();
 
         Logger.LogInfo($"{Info.Metadata.GUID} v{Info.Metadata.Version} has loaded!");
+        
     }
 
     internal void Patch() {

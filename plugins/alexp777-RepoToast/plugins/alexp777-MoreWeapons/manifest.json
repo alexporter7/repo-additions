@@ -1,7 +1,0 @@
-{
-  "name": "MoreWeapons",
-  "version_number": "0.1.0",
-  "website_url": "https://github.com/alexporter7/repo-additions",
-  "description": "Adds guns, bombs, and melee weapons to the game that are all configurable",
-  "dependencies": ["Zehs-REPOLib-2.1.0"]
-}

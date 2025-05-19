@@ -1,4 +1,4 @@
-namespace RepoToast;
+namespace RepoToast.Notification;
 
 public enum NotificationType {
 
