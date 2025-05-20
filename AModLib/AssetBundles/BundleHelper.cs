@@ -11,8 +11,7 @@ public static class BundleHelper {
     }
     
     public static string GetAssetBundlePath(string bundleName, string basePath) {
-        return Path.Combine(Path.GetDirectoryName(basePath)!,
-            bundleName);
+        return Path.Combine(Path.GetDirectoryName(basePath)!, bundleName);
     }
 
 }
