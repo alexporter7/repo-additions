@@ -12,6 +12,7 @@ public class ObjectStateManager<T, K> {
     public           K                                ObjectInstance;
     
     public ObjectStateManager<T, K> RegisterState(T state, ObjectState<T, K> objectState) {
+        AModLib.Logger.LogInfo($"Registered [{state}] for [{typeof(K)}] in state manager");
         ObjectStates.Add(state, objectState);
         return this;
     }
@@ -55,8 +56,7 @@ public class ObjectStateManager<T, K> {
         if (!CanEnterState(requestedState))
             return LogInvalidStateTransition(requestedState);
         
-        RequestState(requestedState);
-        return true;
+        return RequestState(requestedState);
     }
 
     public void ExecuteStateTick() {

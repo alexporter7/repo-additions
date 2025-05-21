@@ -30,6 +30,9 @@
 
         <PackageReference Include="Zehs.REPOLib" Version="2.*" />
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Api\Events\" />
+    </ItemGroup>
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
         <Exec Command="cp $(TargetPath) ~/.config/r2modmanPlus-local/REPO/profiles/mod-testing/BepInEx/plugins/alexporter7-AModLib/$(TargetFileName)" />
     </Target>

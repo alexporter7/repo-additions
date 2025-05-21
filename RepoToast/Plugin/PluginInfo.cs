@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace RepoToast;
+namespace RepoToast.Plugin;
 
 public class PluginInfo {
 

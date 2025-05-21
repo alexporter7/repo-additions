@@ -1,6 +1,9 @@
-﻿using BepInEx;
+﻿using System;
+using AModLib.Api.Enums;
+using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using Photon.Pun;
 using UnityEngine;
 
 namespace AModLib;
@@ -14,17 +17,26 @@ public class AModLib : BaseUnityPlugin {
     internal new static ManualLogSource Logger   => Instance._logger;
     private             ManualLogSource _logger  => base.Logger;
     internal            Harmony?        Harmony  { get; set; }
+    internal            ClientType      ClientType;
 
     private void Awake() {
-        Instance = this;
         
-        this.gameObject.transform.parent = null;
-        this.gameObject.hideFlags        = HideFlags.HideAndDontSave;
+        gameObject.transform.parent = null;
+        gameObject.hideFlags        = HideFlags.HideAndDontSave;
 
         Patch();
-
+        
+        Instance = this;
         Logger.LogInfo($"{Info.Metadata.GUID} v{Info.Metadata.Version} has loaded!");
         
+    }
+
+    private void Start() {
+        ClientType = (!GameManager.Multiplayer())
+            ? ClientType.Local
+            : (PhotonNetwork.IsMasterClient)
+                ? ClientType.Host
+                : ClientType.Local;
     }
 
     internal void Patch() {

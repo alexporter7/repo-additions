@@ -3,7 +3,9 @@ using System.Reflection;
 using AModLib.AssetBundles;
 using BepInEx;
 using BepInEx.Logging;
+using ExitGames.Client.Photon;
 using HarmonyLib;
+using REPOLib.Modules;
 using RepoToast.Notification;
 using TMPro;
 using Unity.VisualScripting;
@@ -37,9 +39,11 @@ public class RepoToast : BaseUnityPlugin {
         Logger.LogInfo($"Loading RepoToast asset bundle using PluginBasePath [{PluginBasePath}]");
         ToastAssetBundle = AssetBundle.LoadFromFile(BundleHelper.GetAssetBundlePath("repotoast", PluginBasePath));
 
-        Logger.LogInfo($"Completed loading RepoToast asset bundle");
+        Logger.LogInfo("Completed loading RepoToast asset bundle");
         ToastNotification = BundleHelper.GetPrefabFromBundle(ToastAssetBundle, "ToastNotificationGO");
-        Logger.LogInfo(ToastNotification.name);
+        
+        Logger.LogInfo("Registering Notification Structs");
+        Notifications.RegisterNotifications();
 
         Patch();
 
@@ -56,29 +60,15 @@ public class RepoToast : BaseUnityPlugin {
     }
 
     private void Update() {
-        if (SemiFunc.InputDown(InputKey.Crouch))
-            SpawnToast();
+        
     }
 
-    private void SpawnToast() {
-        // GameObject gameUi = GameObject.Find("Game Manager");
-        // var toast = gameUi.AddComponent<ToastUI>();
-        var toast = gameObject.AddComponent<ToastUI>().SetNotificationStruct(Notifications.OnExtractUnlocked);
-
-
-        Logger.LogInfo($"GO attached to toast: [{toast.gameObject.name}] | Active: [{toast.isActiveAndEnabled}]");
-
-        // ToastNotification.hideFlags = HideFlags.HideAndDontSave;
-        // ToastNotification.SetActive(true);
-        // var notif = Instantiate(ToastNotification);
-        // notif.transform.SetParent(gameUi.transform);
-        // notif.hideFlags                           = HideFlags.HideAndDontSave;
-        // Logger.LogInfo($"Flags: [{notif.hideFlags}] | Active: [{notif.activeSelf}] [{notif.activeInHierarchy}] | Transform: [{notif.transform.parent.name}] [{gameUi.transform.name}]");
-        // var comp = gameUi.AddComponent<ToastUI>();
-        // foreach(TextMeshProUGUI text in gameUi.GetComponent<ToastUI>().ToastNotification.GetComponentsInChildren<TextMeshProUGUI>())
-        //     Logger.LogInfo($"Found TextMeshProUGUI text is [{text.text}]");
-        //comp.transform.SetParent(gameUi.transform);
-        //Logger.LogInfo($"ToastUI Status: [{comp.isActiveAndEnabled}]");
-    }
+    // public void SpawnToast(NotificationContext ctx) {
+    //
+    //     Logger.LogInfo(ctx.ToString());
+    //     Logger.LogInfo($"Spawning new toast notification [{ctx.NotificationStruct.Type}]");
+    //     gameObject.AddComponent<ToastUI>().SetContext(ctx);
+    //
+    // }
 
 }

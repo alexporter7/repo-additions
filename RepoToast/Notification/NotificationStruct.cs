@@ -2,11 +2,10 @@ using System;
 
 namespace RepoToast.Notification;
 
-public class NotificationStruct(NotificationType type, string title, Func<string, string> description) {
+public class NotificationStruct(NotificationType type, string title, Func<NotificationContext, string> description) {
 
-    public string               Title       = title;
-    public float                ActiveTimer = 3f;
-    public NotificationType     Type        = type;
-    public Func<string, string> Description = description;
+    public string                            Title       = title;
+    public NotificationType                  Type        = type;
+    public Func<NotificationContext, string> Description = description;
 
 }

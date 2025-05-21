@@ -6,7 +6,8 @@ public enum NotificationType {
     OnPlayerRevive,
     OnExtractionCompleted,
     OnExtractionUnlocked,
-    OnValuableDamaged,
-    OnMonsterKilled
+    OnValuableDestroyed,
+    OnMonsterKilled,
+    OnMonsterSpawn
 
 }

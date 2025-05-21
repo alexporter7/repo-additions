@@ -5,8 +5,8 @@ namespace AModLib.Api.Timers;
 
 public class Timer : MonoBehaviour {
 
-    private float  TimerDefault = 1f;
-    private float  TimerValue   = 1f;
+    private float  TimerDefault = 3f;
+    private float  TimerValue   = 3f;
     private bool   Ticking      = false;
     private Action OnComplete;
 
