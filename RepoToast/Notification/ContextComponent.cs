@@ -2,6 +2,8 @@ namespace RepoToast.Notification;
 
 public enum ContextComponent {
 
+    NotificationStruct,
+    
     Player,
     PlayerName,
     PlayerKilledBy,
@@ -9,6 +11,7 @@ public enum ContextComponent {
     
     Monster,
     MonsterName,
+    MonsterHealth,
     
     ValuableName,
     ValuableInitialValue

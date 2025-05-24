@@ -27,13 +27,41 @@
         <PackageReference Include="BepInEx.Core" Version="5.*" ExcludeAssets="runtime"/>
         <PackageReference Include="UnityEngine.Modules" Version="2022.3.21" IncludeAssets="compile" PrivateAssets="all"/>
         <PackageReference Include="R.E.P.O.GameLibs.Steam" Version="*-*" PrivateAssets="all"/>
-        
+    </ItemGroup>
+    <ItemGroup>
         <Reference Include="MenuLib">
             <HintPath>/home/alex/.config/r2modmanPlus-local/REPO/profiles/mod-testing/BepInEx/plugins/nickklmao-MenuLib/MenuLib.dll</HintPath>
         </Reference>
         <Reference Include="OdinSerializer">
             <HintPath>/home/alex/.config/r2modmanPlus-local/REPO/profiles/mod-testing/BepInEx/core/Lordfirespeed-OdinSerializer/OdinSerializer/OdinSerializer.dll</HintPath>
         </Reference>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>/home/alex/.steam/steam/steamapps/common/REPO/REPO_Data/Managed/Assembly-CSharp.dll</HintPath>
+        </Reference>
+<!--        <Reference Include="Assembly-CSharp-firstpass">-->
+<!--            <HintPath>/home/alex/.steam/steam/steamapps/common/REPO/REPO_Data/Managed/Assembly-CSharp-firstpass.dll</HintPath>-->
+<!--        </Reference>-->
+<!--        <Reference Include="Facepunch.Steamworks.Win64">-->
+<!--            <HintPath>/home/alex/.steam/steam/steamapps/common/REPO/REPO_Data/Managed/Facepunch.Steamworks.Win64.dll</HintPath>-->
+<!--        </Reference>-->
+<!--        <Reference Include="Newtonsoft.Json">-->
+<!--            <HintPath>/home/alex/.steam/steam/steamapps/common/REPO/REPO_Data/Managed/Newtonsoft.Json.dll</HintPath>-->
+<!--        </Reference>-->
+<!--        <Reference Include="UnityEngine.UI">-->
+<!--            <HintPath>/home/alex/.steam/steam/steamapps/common/REPO/REPO_Data/Managed/UnityEngine.UI.dll</HintPath>-->
+<!--        </Reference>-->
+<!--        <Reference Include="UnityEngine.TextMeshPro">-->
+<!--            <HintPath>/home/alex/.steam/steam/steamapps/common/REPO/REPO_Data/Managed/Unity.TextMeshPro.dll</HintPath>-->
+<!--        </Reference>-->
+<!--        <Reference Include="UnityEngine.InputSystem">-->
+<!--            <HintPath>/home/alex/.steam/steam/steamapps/common/REPO/REPO_Data/Managed/Unity.InputSystem.dll</HintPath>-->
+<!--        </Reference>-->
+<!--        <Reference Include="PhotonUnityNetworking">-->
+<!--            <HintPath>/home/alex/.steam/steam/steamapps/common/REPO/REPO_Data/Managed/PhotonUnityNetworking.dll</HintPath>-->
+<!--        </Reference>-->
+<!--        <Reference Include="PhotonRealtime">-->
+<!--            <HintPath>/home/alex/.steam/steam/steamapps/common/REPO/REPO_Data/Managed/PhotonRealtime.dll</HintPath>-->
+<!--        </Reference>-->
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\AModLib\AModLib.csproj"/>

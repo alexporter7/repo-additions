@@ -7,6 +7,7 @@ using ExitGames.Client.Photon;
 using HarmonyLib;
 using REPOLib.Modules;
 using RepoToast.Notification;
+using RepoToast.Plugin;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -44,6 +45,9 @@ public class RepoToast : BaseUnityPlugin {
         
         Logger.LogInfo("Registering Notification Structs");
         Notifications.RegisterNotifications();
+        
+        Logger.LogInfo("Registering Notification Actions");
+        Actions.Actions.RegisterActions();
 
         Patch();
 
@@ -58,17 +62,5 @@ public class RepoToast : BaseUnityPlugin {
     internal void Unpatch() {
         Harmony?.UnpatchSelf();
     }
-
-    private void Update() {
-        
-    }
-
-    // public void SpawnToast(NotificationContext ctx) {
-    //
-    //     Logger.LogInfo(ctx.ToString());
-    //     Logger.LogInfo($"Spawning new toast notification [{ctx.NotificationStruct.Type}]");
-    //     gameObject.AddComponent<ToastUI>().SetContext(ctx);
-    //
-    // }
 
 }

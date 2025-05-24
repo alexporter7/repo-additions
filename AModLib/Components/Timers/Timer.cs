@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace AModLib.Api.Timers;
+namespace AModLib.Components.Timers;
 
 public class Timer : MonoBehaviour {
 
@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour {
     private void Start() {
         if (!Mathf.Approximately(TimerValue, TimerDefault))
             TimerValue = TimerDefault;
-        AModLib.Logger.LogDebug("Timer component has been started");
+        AModLib.Logger.LogDebug($"Timer component has been started with a Time of [{TimerDefault}] seconds");
     }
 
     private void Update() {
@@ -35,6 +35,11 @@ public class Timer : MonoBehaviour {
 
     public void SetOnComplete(Action onComplete) {
         OnComplete = onComplete;
+    }
+
+    public void SetTimerDefault(float time) {
+        TimerDefault = time;
+        TimerValue   = time;
     }
 
     private void TimerDone() {

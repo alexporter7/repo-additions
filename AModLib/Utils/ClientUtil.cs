@@ -1,8 +1,8 @@
 using AModLib.Api.Enums;
 
-namespace AModLib.Api.Network;
+namespace AModLib.Utils;
 
-public static class ClientHelper {
+public static class ClientUtil {
 
     public static ClientType GetClientType() {
         return AModLib.Instance.ClientType;
