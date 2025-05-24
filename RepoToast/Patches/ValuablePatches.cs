@@ -44,6 +44,8 @@ internal class ValuablePatches {
 
         if (interactionHandler.LastInteractionPlayer == null)
             return;
+        if (RoundDirector.instance.dollarHaulList.Contains(valuable.gameObject))
+            return;
 
         NetworkEventContext<ContextComponent> context =
             new NetworkEventContext<ContextComponent>()

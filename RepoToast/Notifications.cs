@@ -13,16 +13,19 @@ public static class Notifications {
     public static void RegisterNotifications() {
         /* Extraction Notifications */
         RegisterNotification(NotificationType.OnExtractionUnlocked, "Extraction Unlocked",
-            (ctx) => $"{ctx.GetProp(PlayerName)} has just unlocked an extraction point!");
+            (ctx) => $"{ctx.GetProp(PlayerName)} has just " +
+                     $"unlocked an extraction point!");
         RegisterNotification(NotificationType.OnExtractionCompleted, "Extraction Completed",
-            (ctx) => $"{ctx.GetProp(PlayerName)} has just completed an extraction!");
+            (ctx) => $"{ctx.GetProp(PlayerName)} has just " +
+                     $"completed an extraction by placing {ctx.GetProp(ValuableName)}!");
 
         /* Player Notifications */
         RegisterNotification(NotificationType.OnPlayerDeath, "A Player Has Died",
-            (ctx) => $"{ctx.GetProp(PlayerName)} has just died from {ctx.GetProp(PlayerKilledBy)}");
+            (ctx) => $"{ctx.GetProp(PlayerName)} has just died " +
+                     $"from {ctx.GetProp(PlayerKilledBy)}");
         RegisterNotification(NotificationType.OnPlayerRevive, "A Player Has Been Revived",
-            (ctx) => $"{ctx.GetProp(PlayerName)} has just been brought back from the dead " +
-                     $"by {ctx.GetProp(PlayersInvolved)}");
+            (ctx) => $"{ctx.GetProp(PlayerName)} has just been " +
+                     $"brought back from the dead by {ctx.GetProp(PlayersInvolved)}");
 
         /* Valuable Notifications */
         RegisterNotification(NotificationType.OnValuableDestroyed, "A Valuable Has Been Destroyed",
