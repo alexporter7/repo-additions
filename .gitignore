@@ -4,5 +4,6 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 *.repobundle
-.zip
+/plugins/alexp777-MoreWeapons/moreweapons
+/MoreWeapons/moreweapons
 *moreweapons
