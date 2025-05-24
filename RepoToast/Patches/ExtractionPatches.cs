@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using AModLib.Api.Network;
 using AModLib.Utils;
 using ExitGames.Client.Photon;
@@ -50,12 +52,20 @@ internal class ExtractionPatches {
                .AddContextComponent(ContextComponent.PlayerName, 
                    SemiFunc.PlayerGetName(interactionHandler.LastInteractionPlayer));
         }
-        //TODO: implement this
         else if (newState == ExtractionPoint.State.Success) {
+            ValuableObject lastValuableAdded = 
+                RoundDirector.instance.dollarHaulList.Last().GetComponent<ValuableObject>();
+            
+            RepoToast.Logger.LogDebug($"Last Object added to extraction point was [{lastValuableAdded.name}]");
+            PlayerAvatar lastPlayer = lastValuableAdded.GetComponent<InteractionHandler>().LastInteractionPlayer;
+            
+            
             ctx.AddContextComponent(ContextComponent.NotificationStruct,
                    Notifications.GetNotification(NotificationType.OnExtractionCompleted))
                .AddContextComponent(ContextComponent.PlayerName, 
-                   "Test Player");
+                   lastPlayer.playerName)
+               .AddContextComponent(ContextComponent.ValuableName, 
+                   lastValuableAdded.name.Replace("(Clone)", ""));
         }
         else {
             return;
