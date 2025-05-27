@@ -37,7 +37,6 @@
     <ItemGroup>
       <Folder Include="Api\Config\" />
       <Folder Include="Api\Events\" />
-      <Folder Include="Components\" />
     </ItemGroup>
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
         <Exec Command="cp $(TargetPath) ~/.config/r2modmanPlus-local/REPO/profiles/mod-testing/BepInEx/plugins/alexporter7-AModLib/$(TargetFileName)" />
