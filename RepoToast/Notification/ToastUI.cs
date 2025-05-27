@@ -4,7 +4,7 @@ using AModLib.Api.Network;
 using AModLib.Utils;
 using TMPro;
 using UnityEngine;
-using Timer = AModLib.Components.Timers.Timer;
+using Timer = AModLib.Components.Timer;
 
 namespace RepoToast.Notification;
 

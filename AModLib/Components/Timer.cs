@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace AModLib.Components.Timers;
+namespace AModLib.Components;
 
 public class Timer : MonoBehaviour {
 
