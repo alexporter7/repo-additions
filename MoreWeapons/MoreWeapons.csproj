@@ -48,8 +48,4 @@
       <Folder Include="Items\" />
     </ItemGroup>
 
-<!--    <Target Name="PostBuild" AfterTargets="PostBuildEvent">-->
-<!--        <Exec Command="cp $(TargetPath) ~/.config/r2modmanPlus-local/REPO/profiles/mod-testing/BepInEx/plugins/Unknown-MoreWeapons/$(TargetFileName)" />-->
-<!--    </Target>-->
-
 </Project>
